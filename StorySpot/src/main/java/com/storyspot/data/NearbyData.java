@@ -8,11 +8,15 @@ public class NearbyData {
     public String description;
     public String distance;
     public String image;
+    public String creator;
+    public String date;
 
-    public void setData(String title, String description, String distance, String image) {
+    public void setData(String title, String description, String distance, String image, String creator, String date) {
         this.title = title;
         this.description = description;
         this.distance = distance;
         this.image = image;
+        this.creator = creator;
+        this.date = date;
     }
 }

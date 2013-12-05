@@ -7,10 +7,45 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:src="@drawable/nyc"
+        android:src="@drawable/ic_background_nyc"
         android:scaleType="centerCrop"/>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#BBFFFFFF"/>
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textColor="@android:color/holo_blue_light"/>
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textColor="@android:color/holo_blue_light"/>
+            </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
+        android:layout_above="@id/rl_bottom"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical">
@@ -18,46 +53,56 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="3">
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/ic_icon_full"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
             <TextView
                 android:id="@+id/tv_title"
                 android:text="@string/app_name"
                 android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="40sp"
+                android:layout_below="@+id/icon"
                 android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:textColor="@android:color/holo_blue_dark"/>
+                android:textColor="@android:color/holo_blue_dark"
+                android:imeActionLabel="actionGo"/>
             </RelativeLayout>
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:padding="@dimen/activity_vertical_margin">
-
-            <Button
-                android:id="@+id/btn_login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:textColor="@android:color/holo_blue_light"
+            android:layout_weight="2"
+            android:padding="@dimen/activity_horizontal_margin">
+            <ScrollView
                 android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin"/>
-            <EditText
-                android:id="@+id/username"
-                android:hint="Username"
-                android:gravity="center_horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_above="@id/btn_login"></EditText>
-            </RelativeLayout>
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-
-
-        </LinearLayout>
-
+                    <EditText
+                        android:id="@+id/username"
+                        android:hint="Username"
+                        android:inputType="textPersonName"
+                        android:gravity="center_horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"></EditText>
+                    <EditText
+                        android:id="@+id/password"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:gravity="center_horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"></EditText>
+                </LinearLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

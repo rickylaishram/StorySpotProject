@@ -50,6 +50,8 @@ public class NearbyStoriesFragment extends ListFragment {
         bundle.putString("description", data.get(pos).description);
         bundle.putString("distance", data.get(pos).distance);
         bundle.putString("image", data.get(pos).image);
+        bundle.putString("creator", data.get(pos).creator);
+        bundle.putString("date", data.get(pos).date);
 
         Intent mIntent = new Intent(getActivity().getBaseContext(), CoverActivity.class);
         mIntent.putExtras(bundle);
@@ -59,7 +61,7 @@ public class NearbyStoriesFragment extends ListFragment {
 
     //fixed data for now
     private Vector<NearbyData> getdata() {
-        Vector<NearbyData> data = new Vector<NearbyData>();
+        Vector<NearbyData> value = new Vector<NearbyData>();
 
         String[] titles = {"Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8", "Title 9"};
         String[] distances = {"500", "1000", "1000", "1500", "1500", "1500", "1500", "2000", "2000"};
@@ -74,13 +76,15 @@ public class NearbyStoriesFragment extends ListFragment {
                             "http://i.imgur.com/pwsZB.jpg"
                         };
         String description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+        String creator = "Creator";
+        String date = "11/15/13";
 
         for (int i = 0; i < 9; i++) {
             NearbyData nearby = new NearbyData();
-            nearby.setData( titles[i], description, distances[i], images[i] );
-            data.add(nearby);
+            nearby.setData( titles[i], description, distances[i], images[i], creator, date );
+            value.add(nearby);
         }
 
-        return data;
+        return value;
     }
 }

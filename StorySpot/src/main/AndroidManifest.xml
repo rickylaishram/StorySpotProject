@@ -11,7 +11,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
+    <permission
+        android:name="com.storyspot.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.storyspot.permission.MAPS_RECEIVE" />
 
     <application
         android:allowBackup="true"
@@ -19,8 +27,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.storyspot.Login"
-            android:label="@string/app_name" >
+            android:name="com.storyspot.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,22 +38,48 @@
         </activity>
         <activity
             android:name="com.storyspot.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.storyspot.CoverActivity"
-            android:label="@string/title_activity_cover" >
+            android:label="@string/title_activity_cover"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity
-            android:name="com.storyspot.MapActivity"
-            android:label="@string/title_activity_map" >
-        </activity>
+
         <meta-data
             android:name="com.google.android.gms.version"
-            android:value="3" />
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDhkS2NXxm3d1-uPZO0E8ifA7ilTPplo8k" />
+            android:value="AIzaSyD7sx6VN8-4DxHIvvX12fNviocBwmXeCMs" />
+
+        <activity
+            android:name="com.storyspot.MapActivity"
+            android:label="@string/title_activity_map"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.storyspot.CreateActivity"
+            android:label="@string/title_activity_create"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.storyspot.RegisterActivity"
+            android:label="@string/title_activity_register" >
+        </activity>
+        <activity
+            android:name="com.storyspot.SummaryActivity"
+            android:label="@string/title_activity_summary" >
+        </activity>
+        <activity
+            android:name="com.storyspot.PhotoActivity"
+            android:label="@string/title_activity_photo" >
+        </activity>
+        <activity
+            android:name="com.storyspot.TagActivity"
+            android:label="@string/title_activity_tag" >
+        </activity>
     </application>
 
 </manifest>

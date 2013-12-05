@@ -23,6 +23,8 @@ android {
 }
 
 dependencies {
-	compile 'com.android.support:support-v4:+'
-    compile 'com.squareup.picasso:picasso:2.1.1'
+	compile 'com.android.support:support-v4:18.0.0'
+	compile 'com.squareup.picasso:picasso:2.1.1'
+	compile 'com.google.android.gms:play-services:4.0.30'
+    compile files("libs/android-async-http-1.4.4.jar", "libs/gson-2.2.4.jar")
 }

@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -37,11 +39,9 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //getActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.blue));
-
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+        mTitle = getString(R.string.title_section1);
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -54,6 +54,7 @@ public class MainActivity extends Activity
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
         if(position == 0) {
+            mTitle = getString(R.string.title_section1);
             fragmentManager.beginTransaction().replace(R.id.container, new NearbyStoriesFragment()).commit();
         } else {
             fragmentManager.beginTransaction()
@@ -104,7 +105,10 @@ public class MainActivity extends Activity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_create) {
+            Intent mIntent = new Intent(MainActivity.this, CreateActivity.class);
+            startActivity(mIntent);
+            overridePendingTransition(R.anim.slide_right_in, R.anim.slide_right_out);
             return true;
         }
         return super.onOptionsItemSelected(item);
