@@ -327,7 +327,7 @@ public class TagActivity extends Activity implements LocationListener {
                 Log.e("Upload", e.toString());
             }
 
-            hpost.setHeader("Authorization", Constants.IMGUR_AUTH);
+            hpost.setHeader("Authorization", getApplicationContext().getResources().getString(R.string.imgur_api_key));
 
             DefaultHttpClient client = new DefaultHttpClient();
             HttpResponse resp = null;
