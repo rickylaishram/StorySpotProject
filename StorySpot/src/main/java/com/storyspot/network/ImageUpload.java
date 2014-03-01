@@ -27,6 +27,11 @@ import java.util.List;
  * Created by rickylaishram on 11/24/13.
  */
 public class ImageUpload extends AsyncTask<Bitmap, Void, Void> {
+    private String API_KEY;
+
+    public ImageUpload(String api_key) {
+        API_KEY = api_key;
+    }
 
     @Override
     public Void doInBackground(Bitmap... bmap) {
@@ -48,7 +53,7 @@ public class ImageUpload extends AsyncTask<Bitmap, Void, Void> {
             Log.e("Upload", e.toString());
         }
 
-        hpost.setHeader("Authorization", Constants.IMGUR_AUTH);
+        hpost.setHeader("Authorization", API_KEY);
 
         DefaultHttpClient client = new DefaultHttpClient();
         HttpResponse resp = null;

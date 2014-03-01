@@ -60,6 +60,15 @@ public class CoverActivity extends Activity {
         date.setTypeface(font_georgia);
         creator.setTypeface(font_georgia);
 
+        Boolean status = bundle.getBoolean("completed");
+        if(status) {
+            start.setEnabled(false);
+            summary.setEnabled(true);
+        } else {
+            summary.setEnabled(false);
+            start.setEnabled(true);
+        }
+
         ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

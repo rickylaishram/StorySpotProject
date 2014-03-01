@@ -28,6 +28,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Save"
+            android:enabled="false"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 
